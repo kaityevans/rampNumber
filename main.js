@@ -18,9 +18,18 @@ const rl = readline.createInterface({
 // 9. Turn in the URL to your repo, once for each person in your group
 
 
-  // const numOfRampsBelow = (num) => {
+  const numOfRampsBelow = (num) => {
   //   //  Your code goes here
-  // }
+    
+  // go through each value in the string - for loop
+   
+  // compare the value to the number preceeding it 
+
+  // if the value is less than or equal to the other, it will stay
+
+  // determine which number is smaller and move the smaller number to the left
+  
+  }
 
   // numOfRampsBelow(99999) // => "2001 total ramp numbers are less than 99999"
 
@@ -37,7 +46,22 @@ const rl = readline.createInterface({
 
 
 const rampNum = (str) => {
-  console.log('BOOMS', str.length)
+  console.log('BOOMS', str)
+  // loop over string
+  for (let i = 0; i <= num; i++) {
+    console.log(num[i])
+ 
+  // determine if current item is less than or greater than the last item
+    
+      if(x < y || x > y){
+        // if true 
+        return true
+      // count this somehow
+      }
+  
+
+  // return count
+  }
 }
 
 
@@ -56,7 +80,7 @@ const getPrompt = () =>  {
 
 if (typeof describe === 'function') {
   describe('#rampNum()', () => {
-    it('should be of type function', () => {
+    it('should determine if a number is a ramp number', () => {
       
       assert.equal(typeof rampNum, "function");
     });
