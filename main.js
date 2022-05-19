@@ -1,11 +1,11 @@
-'use strict';
+// 'use strict';
 
-const assert = require('assert');
-const readline = require('readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const assert = require('assert');
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
 // 1. First build this project in the terminal
 // 2. Then attach it to the DOM
@@ -17,21 +17,38 @@ const rl = readline.createInterface({
 // 8. Present to class
 // 9. Turn in the URL to your repo, once for each person in your group
 
-
-  const numOfRampsBelow = (num) => {
-  //   //  Your code goes here
-    
-  // go through each value in the string - for loop
-   
-  // compare the value to the number preceeding it 
-
-  // if the value is less than or equal to the other, it will stay
-
-  // determine which number is smaller and move the smaller number to the left
-  
+let rampNumArray = []
+const rampNum = (num) => {
+  let numArray = num.toString().split("");
+  for (let i = 0; i < numArray.length - 1; i++) {
+    if (numArray[i] > numArray[i + 1]) {
+      return false
+    }
   }
+  rampNumArray.push(num)
+  return true
+}
 
-  // numOfRampsBelow(99999) // => "2001 total ramp numbers are less than 99999"
+
+const numOfRamps = (numLimit) => {
+  let counter = 0
+  for(let ii = 0; ii < numLimit; ii++){
+    if(rampNum(ii)){
+      counter++
+    }
+  }
+  console.log(counter)
+  return counter
+}
+numOfRamps(135)
+//   //  Your code goes here
+// go through each value in the string - for loop
+// compare the value to the number preceeding it
+// if the value is less than or equal to the other, it will sta
+// determine which number is smaller and move the smaller number to the left
+
+
+// numOfRampsBelow(99999) // => "2001 total ramp numbers are less than 99999"
 
 
 
@@ -45,27 +62,27 @@ const rl = readline.createInterface({
 
 
 
-const rampNum = (str) => {
-  console.log('BOOMS', str)
+// const  = (str) => {
+  // console.log('BOOMS', str)
   // loop over string
-  for (let i = 0; i <= num; i++) {
-    console.log(num[i])
- 
-  // determine if current item is less than or greater than the last item
-    
-      if(x < y || x > y){
-        // if true 
-        return true
+  // for (let i = 0; i <= num; i++) {
+    // console.log(num[i])
+
+    // determine if current item is less than or greater than the last item
+
+    // if (x < y || x > y) {
+      // if true 
+      // return true
       // count this somehow
-      }
-  
-
-  // return count
-  }
-}
+    // }
 
 
-const getPrompt = () =>  {
+    // return count
+  // }
+// }
+
+
+const getPrompt = () => {
   rl.question('Enter your string to count the characters: ', (str) => {
     rampNum(str);
     getPrompt();
@@ -81,7 +98,7 @@ const getPrompt = () =>  {
 if (typeof describe === 'function') {
   describe('#rampNum()', () => {
     it('should determine if a number is a ramp number', () => {
-      
+
       assert.equal(typeof rampNum, "function");
     });
   });
