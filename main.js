@@ -1,21 +1,11 @@
-// 'use strict';
+'use strict';
 
-// const assert = require('assert');
-// const readline = require('readline');
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-
-// 1. First build this project in the terminal
-// 2. Then attach it to the DOM
-// 3. Work through the challenge together
-// 4. As always whiteboard it and make a code plan
-// 5. Translate from English to pseudo code then to JavaScript
-// 6. When you finish work on the Further Practice Challenge
-// 7. Test
-// 8. Present to class
-// 9. Turn in the URL to your repo, once for each person in your group
+const assert = require('assert');
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 let rampNumArray = []
 const rampNum = (num) => {
@@ -28,7 +18,7 @@ const rampNum = (num) => {
   rampNumArray.push(num)
   return true
 }
-
+console.log(rampNum(132))
 
 const numOfRamps = (numLimit) => {
   let counter = 0
@@ -62,26 +52,6 @@ numOfRamps(135)
 
 
 
-// const  = (str) => {
-  // console.log('BOOMS', str)
-  // loop over string
-  // for (let i = 0; i <= num; i++) {
-    // console.log(num[i])
-
-    // determine if current item is less than or greater than the last item
-
-    // if (x < y || x > y) {
-      // if true 
-      // return true
-      // count this somehow
-    // }
-
-
-    // return count
-  // }
-// }
-
-
 const getPrompt = () => {
   rl.question('Enter your string to count the characters: ', (str) => {
     rampNum(str);
@@ -102,6 +72,13 @@ if (typeof describe === 'function') {
       assert.equal(typeof rampNum, "function");
     });
   });
+
+  describe('Results', () => {
+    it('should determine how many ramp numbers exist', () => {
+      assert.equal(numOfRamps(123), 65)
+    })
+  })
+
 } else {
   getPrompt();
 }
